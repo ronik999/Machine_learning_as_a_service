@@ -30,17 +30,6 @@ def predict_prophet_inference(model, date):
 
 
 def predict_predictive_inference_model(prediction_df, model, enc):
-    '''
-    INPUT
-    _____
-    store_id: Add store ID
-    item_id: Add item ID
-    date: Date for prediction
-
-    OUTPUT:
-    -------
-    prediction: Return predicted value accroding to store ID and item ID
-    '''
 
     prediction_df['date'] = pd.to_datetime(prediction_df['date'])
     prediction_df['cat_id'] = prediction_df['item_id'].str.split('_').str[0]
