@@ -103,4 +103,3 @@ def predictive_model(date: str, item_id: str, store_id:str):
                                               tree_model, ord_enc)
     return pred
 
-
