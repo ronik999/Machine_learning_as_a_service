@@ -63,13 +63,28 @@ def predictive_format_features(
 
 @app.get("/")
 def read_root():
+    return """
+    This project is for creating a machine learning model and forecasting model to predict the revenue for the American retailer that has 10 stores across 3 different states: California (CA), Texas (TX), and Wisconsin (WI).
 
-    return 'This project is created for predicting and forecasting the revenue of a american retailer'
+    Two different types of problems were identified and solved using the models for this project.
 
+    There are 4 endpoints created for this project:
 
+    - / (GET): First endpoint to reach this page.
+
+    - /health/ (GET): Second endpoint for a welcoming message.
+
+    - /sales/national/ (GET): Third endpoint for getting the prediction of forecasting model. The model expects date in string format.
+
+    - /sales/stores/items/ (GET): Fourth endpoint for the predictive model. The model expects 3 parameters as input: item id, store id, and date for prediction.
+    
+    Link to Github Repository: https://github.com/ronik999/Machine_learning_as_a_service/tree/master
+    
+    API URL: 
+    """
 @app.get('/health', status_code=200)
 def healthcheck():
-    return 'Get ready to predict and forecast sales!'
+    return 'Get ready to predict the item revenue or forecast if you want!!!'
 
 
 @app.get('/sales/national', status_code=200)
