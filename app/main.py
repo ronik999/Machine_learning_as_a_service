@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from starlette.responses import JSONResponse
-import pickle
+import joblib
 import pandas as pd
 from datetime import timedelta
 import datetime
@@ -8,11 +8,11 @@ import datetime
 app = FastAPI()
 
 with open('../models/forecasting/final_prophet_model.p', 'rb') as prophet_model_file:
-    prophet_model = pickle.load(prophet_model_file)
+    prophet_model = joblib.load(prophet_model_file)
 with open('../models/predictive/decision_tree_final_model.p', 'rb') as tree_model_file:
-    tree_model = pickle.load(tree_model_file)
+    tree_model = joblib.load(tree_model_file)
 with open('../models/ord_enc.p', 'rb') as enc_file:
-    ord_enc = pickle.load(enc_file)
+    ord_enc = joblib.load(enc_file)
 
 
 def predict_prophet_inference(model, date):
