@@ -7,8 +7,8 @@ import datetime
 
 app = FastAPI()
 
-# with open('../models/forecasting/final_prophet_model.p', 'rb') as prophet_model_file:
-#     prophet_model = joblib.load(prophet_model_file)
+with open('../models/forecasting/final_prophet_model.p', 'rb') as prophet_model_file:
+    prophet_model = joblib.load(prophet_model_file)
 with open('../models/predictive/decision_tree_final_model.p', 'rb') as tree_model_file:
     tree_model = joblib.load(tree_model_file)
 with open('../models/ord_enc.p', 'rb') as enc_file:
@@ -86,12 +86,12 @@ def healthcheck():
     return 'Get ready to predict the item revenue or forecast if you want!!!'
 
 
-# @app.get('/sales/national', status_code=200)
-# def forecast_model(date: str):
-#     forecast_input = forecast_format_features(date)
-#     forecast_input = forecast_input['date'][0]
-#     pred = predict_prophet_inference(prophet_model, forecast_input)
-#     return pred
+@app.get('/sales/national', status_code=200)
+def forecast_model(date: str):
+    forecast_input = forecast_format_features(date)
+    forecast_input = forecast_input['date'][0]
+    pred = predict_prophet_inference(prophet_model, forecast_input)
+    return pred
 
 
 @app.get('/sales/stores/items', status_code=200)
