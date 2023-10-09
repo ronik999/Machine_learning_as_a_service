@@ -1,5 +1,5 @@
 from prophet import Prophet
-import joblib
+import pickle
 
 
 def train_prophet_model(train_df, model_save, model_name):
@@ -9,7 +9,7 @@ def train_prophet_model(train_df, model_save, model_name):
     model.add_country_holidays(country_name='USA')
     model.fit(train_df)
     if model_save:
-        joblib.dump(model, '../../models/forecasting/'+str(model_name))
+        pickle.dump(model, open("../../models/forecasting/"+str(model_name), "wb"))
 
     return model
 

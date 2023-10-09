@@ -79,7 +79,7 @@ def read_root():
     
     Link to Github Repository: https://github.com/ronik999/Machine_learning_as_a_service/tree/master
     
-    API URL: 
+    API URL: https://protected-lake-95023-3e1d8126370a.herokuapp.com/
     """
 @app.get('/health', status_code=200)
 def healthcheck():
