@@ -1,16 +1,27 @@
 Machine_Learning_as_a_service_assignment_2
 ==============================
 
+This project is for creating a machine learning model and forecasting model to predict the revenue for the American 
+retailer that has 10 stores across 3 different states: California (CA), Texas (TX), and Wisconsin (WI).   
+Two different types of problems were identified and solved using the models for this project.   
+There are 4 endpoints created for this project:    
+- / (GET): First endpoint to reach this page.  
+- /health/ (GET): Second endpoint for a welcoming message.   
+- /sales/national/ (GET): Third endpoint for getting the prediction of the forecasting model. The model expects a date 
+in string format.  
+- /sales/stores/items/ (GET): Fourth endpoint for the predictive model. The model expects 3 parameters as input: item id, store id, and date for prediction.
+
 All the required files are attached in this repository for assignment 2.
 The FastApi is deployed on heroku.
 
 Link to Heroku: https://mla-at2-e0654ce6deb8.herokuapp.com/
 
-
 Project Organization
 ------------
 
     ├── LICENSE
+    ├── app            <- Building FastApi files
+    │   └── main.py 
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
     ├── README.md          <- The top-level README for developers using this project.
     ├── data
@@ -54,6 +65,8 @@ Project Organization
     │       └── visualize.py
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+    └── DockerFile  <- For building docker image
+    └── Heroku.yml  <- For deploying to heroku
 
 
 --------
