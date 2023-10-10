@@ -8,8 +8,8 @@ There are 4 endpoints created for this project:
 - / (GET): First endpoint to reach this page.  
 - /health/ (GET): Second endpoint for a welcoming message.   
 - /sales/national/ (GET): Third endpoint for getting the prediction of the forecasting model. The model expects a date 
-in string format.  
-- /sales/stores/items/ (GET): Fourth endpoint for the predictive model. The model expects 3 parameters as input: item id, store id, and date for prediction.
+in string format. Format - (yyyy/mm/dd): Where y is year, m is month and d is day. 
+- /sales/stores/items/ (GET): Fourth endpoint for the predictive model. The model expects 3 parameters as input: item id, store id, and date for prediction. Format for date is similar to third endpoint
 
 All the required files are attached in this repository for assignment 2.
 The FastApi is deployed on heroku.
