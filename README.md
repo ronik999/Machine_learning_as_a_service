@@ -1,7 +1,11 @@
 Machine_Learning_as_a_service_assignment_2
 ==============================
 
-Cookiecutter template for Assignment 2 Adv MLA
+All the required files are attached in this repository for assignment 2.
+The FastApi is deployed on heroku.
+
+Link to Heroku: https://mla-at2-e0654ce6deb8.herokuapp.com/
+
 
 Project Organization
 ------------
