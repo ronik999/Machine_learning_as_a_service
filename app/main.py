@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from starlette.responses import JSONResponse
-import pickle
+import pickle, gzip
 import joblib
 import pandas as pd
 from datetime import timedelta
@@ -103,4 +103,5 @@ def predictive_model(date: str, item_id: str, store_id:str):
     pred = predict_predictive_inference_model(predictive_input,
                                               tree_model, ord_enc)
     return pred
+
 
