@@ -63,7 +63,7 @@ def predictive_format_features(
 
 @app.get("/")
 def read_root():
-    return """
+    message = """
     This project is for creating a machine learning model and forecasting model to predict the revenue for the American retailer that has 10 stores across 3 different states: California (CA), Texas (TX), and Wisconsin (WI).
 
     Two different types of problems were identified and solved using the models for this project.
@@ -74,14 +74,17 @@ def read_root():
 
     - /health/ (GET): Second endpoint for a welcoming message.
 
-    - /sales/national/ (GET): Third endpoint for getting the prediction of forecasting model. The model expects date in string format.
+    - /sales/national/ (GET): Third endpoint for getting the prediction of the forecasting model. The model expects a date in string format.
 
     - /sales/stores/items/ (GET): Fourth endpoint for the predictive model. The model expects 3 parameters as input: item id, store id, and date for prediction.
-    
-    Link to Github Repository: https://github.com/ronik999/Machine_learning_as_a_service/tree/master
-    
-    API URL: https://mla-at2-e0654ce6deb8.herokuapp.com/
+
+    Link to Github Repository: [GitHub Repository](https://github.com/ronik999/Machine_learning_as_a_service/tree/master)
+
+    API URL: [API URL](https://protected-lake-95023-3e1d8126370a.herokuapp.com/)
     """
+    return {"message": message}
+
+
 @app.get('/health', status_code=200)
 def welcome_message():
     return 'Get ready to predict the item revenue or forecast if you want!!!'
