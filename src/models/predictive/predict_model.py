@@ -4,7 +4,7 @@ import pickle
 import pandas as pd
 import datetime
 from src.visualization.visualize import get_actual_vs_predicted_plot
-
+import joblib
 
 def get_scores(y_true, y_pred, split):
     '''
@@ -40,7 +40,7 @@ def predict_model(trained_model, X_train, y_train, X_test, y_test, save_model, s
     get_scores(y_train, y_pred_train, split='Train')
     get_scores(y_test, y_pred, split="Test")
     if save_model:
-        pickle.dump(trained_model, open("../../models/predictive/"+str(save_model_file_name), "wb"))
+        joblib.dump(trained_model, open("../../models/predictive/"+str(save_model_file_name), "wb"))
     if plot:
         get_actual_vs_predicted_plot(y_test, y_pred)
 

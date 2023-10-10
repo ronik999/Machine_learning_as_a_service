@@ -14,9 +14,9 @@ def train_predictive_model(X_train, y_train, X_test, y_test):
     model: Trained model
 
     '''
-    model = DecisionTreeRegressor(max_depth=100,
-                                  min_samples_split=39,
-                                  min_samples_leaf=18,
+    model = DecisionTreeRegressor(max_depth=15,
+                                  min_samples_split=5,
+                                  min_samples_leaf=6,
                                   max_features=None
                                   )
     model.fit(X_train, y_train)
